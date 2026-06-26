@@ -218,7 +218,7 @@
 <!-- LOGIN -->
 <div class="login-screen" id="loginScreen">
   <div class="login-box">
-    <div class="login-icon">🌸</div>
+    <div class="login-icon">🌸🐉</div>
     <div class="login-logo">Aadu's Library</div>
     <div class="login-tagline">Your private manga & danmei collection</div>
     <div class="login-mode-title" id="loginModeTitle">Welcome back!</div>
@@ -512,8 +512,7 @@
 
   async function showApp() {
     document.getElementById('mainApp').classList.add('visible');
-    const email = currentUser.email || '';
-    document.getElementById('userBadge').textContent = '👤 ' + (email.split('@')[0] || 'Aadu');
+    document.getElementById('userBadge').textContent = '👤 Aadeshma';
     await loadData();
     renderCards();
   }

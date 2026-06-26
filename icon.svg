@@ -1,11 +1,163 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="100" fill="#fde8ee"/>
-  <rect x="80" y="100" width="220" height="300" rx="16" fill="#f4a7b9"/>
-  <rect x="100" y="120" width="180" height="260" rx="8" fill="#fff8f9"/>
-  <rect x="120" y="150" width="140" height="10" rx="5" fill="#c06080"/>
-  <rect x="120" y="175" width="110" height="7" rx="3.5" fill="#f0dde4"/>
-  <rect x="120" y="192" width="125" height="7" rx="3.5" fill="#f0dde4"/>
-  <rect x="120" y="209" width="95" height="7" rx="3.5" fill="#f0dde4"/>
-  <circle cx="340" cy="330" r="80" fill="#d6f0dd" stroke="#a8d5b5" stroke-width="4"/>
-  <text x="340" y="355" font-family="serif" font-size="70" fill="#4a7a5a" text-anchor="middle">🌸</text>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#fff0f5"/>
+      <stop offset="100%" stop-color="#e8f5ee"/>
+    </radialGradient>
+    <radialGradient id="petal" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#fde8ee"/>
+      <stop offset="100%" stop-color="#f4a7b9"/>
+    </radialGradient>
+    <radialGradient id="pandaBody" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e8e8e8"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="110" fill="url(#bg)"/>
+
+  <!-- Falling petals behind panda -->
+  <ellipse cx="60" cy="80" rx="8" ry="12" fill="#f9c6d0" opacity="0.7" transform="rotate(-20 60 80)"/>
+  <ellipse cx="140" cy="50" rx="7" ry="10" fill="#fde8ee" opacity="0.6" transform="rotate(15 140 50)"/>
+  <ellipse cx="390" cy="70" rx="9" ry="13" fill="#f4a7b9" opacity="0.65" transform="rotate(-30 390 70)"/>
+  <ellipse cx="450" cy="140" rx="7" ry="11" fill="#f9c6d0" opacity="0.55" transform="rotate(25 450 140)"/>
+  <ellipse cx="50" cy="200" rx="6" ry="9" fill="#fde8ee" opacity="0.5" transform="rotate(-10 50 200)"/>
+  <ellipse cx="470" cy="220" rx="8" ry="11" fill="#f4a7b9" opacity="0.6" transform="rotate(35 470 220)"/>
+  <ellipse cx="80" cy="310" rx="7" ry="10" fill="#f9c6d0" opacity="0.55" transform="rotate(-25 80 310)"/>
+  <ellipse cx="440" cy="300" rx="6" ry="9" fill="#fde8ee" opacity="0.5" transform="rotate(20 440 300)"/>
+  <ellipse cx="420" cy="80" rx="6" ry="9" fill="#f4a7b9" opacity="0.45" transform="rotate(10 420 80)"/>
+  <ellipse cx="300" cy="35" rx="7" ry="10" fill="#f9c6d0" opacity="0.5" transform="rotate(-15 300 35)"/>
+  <ellipse cx="180" cy="40" rx="6" ry="8" fill="#fde8ee" opacity="0.45" transform="rotate(30 180 40)"/>
+
+  <!-- Floating cherry blossom flowers -->
+  <g transform="translate(80,120)" opacity="0.8">
+    <ellipse cx="0" cy="-9" rx="5" ry="8" fill="url(#petal)" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-9" rx="5" ry="8" fill="url(#petal)" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-9" rx="5" ry="8" fill="url(#petal)" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-9" rx="5" ry="8" fill="url(#petal)" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-9" rx="5" ry="8" fill="url(#petal)" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="3" fill="#ffd6e0"/>
+  </g>
+  <g transform="translate(420,110)" opacity="0.75">
+    <ellipse cx="0" cy="-8" rx="5" ry="7" fill="url(#petal)" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-8" rx="5" ry="7" fill="url(#petal)" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-8" rx="5" ry="7" fill="url(#petal)" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-8" rx="5" ry="7" fill="url(#petal)" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-8" rx="5" ry="7" fill="url(#petal)" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="3" fill="#ffd6e0"/>
+  </g>
+  <g transform="translate(460,300)" opacity="0.65">
+    <ellipse cx="0" cy="-7" rx="4" ry="6" fill="url(#petal)" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-7" rx="4" ry="6" fill="url(#petal)" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-7" rx="4" ry="6" fill="url(#petal)" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-7" rx="4" ry="6" fill="url(#petal)" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-7" rx="4" ry="6" fill="url(#petal)" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="2.5" fill="#ffd6e0"/>
+  </g>
+  <g transform="translate(55,320)" opacity="0.6">
+    <ellipse cx="0" cy="-7" rx="4" ry="6" fill="url(#petal)" transform="rotate(20)"/>
+    <ellipse cx="0" cy="-7" rx="4" ry="6" fill="url(#petal)" transform="rotate(92)"/>
+    <ellipse cx="0" cy="-7" rx="4" ry="6" fill="url(#petal)" transform="rotate(164)"/>
+    <ellipse cx="0" cy="-7" rx="4" ry="6" fill="url(#petal)" transform="rotate(236)"/>
+    <ellipse cx="0" cy="-7" rx="4" ry="6" fill="url(#petal)" transform="rotate(308)"/>
+    <circle cx="0" cy="0" r="2.5" fill="#ffd6e0"/>
+  </g>
+
+  <!-- PANDA BODY (chubby round) -->
+  <ellipse cx="256" cy="320" rx="130" ry="120" fill="url(#pandaBody)"/>
+
+  <!-- PANDA LEGS (sitting) -->
+  <ellipse cx="170" cy="410" rx="55" ry="40" fill="#1a1a1a"/>
+  <ellipse cx="342" cy="410" rx="55" ry="40" fill="#1a1a1a"/>
+  <!-- Paw pads -->
+  <ellipse cx="162" cy="428" rx="30" ry="18" fill="#2a2a2a"/>
+  <ellipse cx="350" cy="428" rx="30" ry="18" fill="#2a2a2a"/>
+  <circle cx="152" cy="420" r="7" fill="#3a3a3a"/>
+  <circle cx="172" cy="418" r="7" fill="#3a3a3a"/>
+  <circle cx="340" cy="418" r="7" fill="#3a3a3a"/>
+  <circle cx="360" cy="420" r="7" fill="#3a3a3a"/>
+
+  <!-- PANDA ARMS -->
+  <ellipse cx="148" cy="320" rx="40" ry="28" fill="#1a1a1a" transform="rotate(-20 148 320)"/>
+  <ellipse cx="364" cy="320" rx="40" ry="28" fill="#1a1a1a" transform="rotate(20 364 320)"/>
+
+  <!-- PANDA HEAD (big and round) -->
+  <circle cx="256" cy="195" r="115" fill="url(#pandaBody)"/>
+
+  <!-- EARS -->
+  <circle cx="168" cy="108" r="42" fill="#1a1a1a"/>
+  <circle cx="168" cy="108" r="22" fill="#2d2d2d"/>
+  <circle cx="344" cy="108" r="42" fill="#1a1a1a"/>
+  <circle cx="344" cy="108" r="22" fill="#2d2d2d"/>
+
+  <!-- EYE PATCHES (big cute) -->
+  <ellipse cx="210" cy="195" rx="36" ry="32" fill="#1a1a1a" transform="rotate(-10 210 195)"/>
+  <ellipse cx="302" cy="195" rx="36" ry="32" fill="#1a1a1a" transform="rotate(10 302 195)"/>
+
+  <!-- EYES (shiny) -->
+  <circle cx="210" cy="195" r="20" fill="#ffffff"/>
+  <circle cx="302" cy="195" r="20" fill="#ffffff"/>
+  <circle cx="213" cy="196" r="13" fill="#3a2020"/>
+  <circle cx="305" cy="196" r="13" fill="#3a2020"/>
+  <!-- Eye shine -->
+  <circle cx="218" cy="190" r="5" fill="#ffffff" opacity="0.95"/>
+  <circle cx="310" cy="190" r="5" fill="#ffffff" opacity="0.95"/>
+  <circle cx="207" cy="200" r="2.5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="299" cy="200" r="2.5" fill="#ffffff" opacity="0.6"/>
+
+  <!-- NOSE -->
+  <ellipse cx="256" cy="228" rx="18" ry="12" fill="#1a1a1a"/>
+  <!-- Nose shine -->
+  <ellipse cx="251" cy="224" rx="5" ry="3" fill="#3a3a3a" opacity="0.6"/>
+
+  <!-- MOUTH (cute smile) -->
+  <path d="M238 242 Q256 262 274 242" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <!-- Rosy cheeks -->
+  <ellipse cx="185" cy="235" rx="22" ry="14" fill="#f4a7b9" opacity="0.45"/>
+  <ellipse cx="327" cy="235" rx="22" ry="14" fill="#f4a7b9" opacity="0.45"/>
+
+  <!-- PANDA holding a cherry blossom branch -->
+  <path d="M364 308 Q390 280 400 255 Q410 235 395 220" stroke="#4a3040" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M395 220 Q415 205 420 190" stroke="#4a3040" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M395 220 Q408 225 415 218" stroke="#4a3040" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <!-- Flowers on branch -->
+  <g transform="translate(420,188)" opacity="0.95">
+    <ellipse cx="0" cy="-10" rx="6" ry="9" fill="url(#petal)" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-10" rx="6" ry="9" fill="url(#petal)" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-10" rx="6" ry="9" fill="url(#petal)" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-10" rx="6" ry="9" fill="url(#petal)" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-10" rx="6" ry="9" fill="url(#petal)" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="4" fill="#ffd6e0"/>
+    <circle cx="0" cy="0" r="2" fill="#e8859a"/>
+  </g>
+  <g transform="translate(415,216)" opacity="0.85">
+    <ellipse cx="0" cy="-8" rx="5" ry="7" fill="url(#petal)" transform="rotate(30)"/>
+    <ellipse cx="0" cy="-8" rx="5" ry="7" fill="url(#petal)" transform="rotate(102)"/>
+    <ellipse cx="0" cy="-8" rx="5" ry="7" fill="url(#petal)" transform="rotate(174)"/>
+    <ellipse cx="0" cy="-8" rx="5" ry="7" fill="url(#petal)" transform="rotate(246)"/>
+    <ellipse cx="0" cy="-8" rx="5" ry="7" fill="url(#petal)" transform="rotate(318)"/>
+    <circle cx="0" cy="0" r="3" fill="#ffd6e0"/>
+  </g>
+
+  <!-- PILE OF LEAVES at bottom -->
+  <ellipse cx="110" cy="476" rx="60" ry="18" fill="#5a8a6a" opacity="0.55" transform="rotate(-8 110 476)"/>
+  <ellipse cx="390" cy="478" rx="55" ry="16" fill="#4a7a5a" opacity="0.5" transform="rotate(10 390 478)"/>
+  <ellipse cx="256" cy="483" rx="90" ry="20" fill="#6a9a7a" opacity="0.5"/>
+  <ellipse cx="155" cy="486" rx="50" ry="14" fill="#a8d5b5" opacity="0.8" transform="rotate(-12 155 486)"/>
+  <ellipse cx="350" cy="484" rx="52" ry="15" fill="#90c0a0" opacity="0.75" transform="rotate(8 350 484)"/>
+  <ellipse cx="256" cy="488" rx="75" ry="16" fill="#b8e0c5" opacity="0.7"/>
+  <ellipse cx="195" cy="490" rx="44" ry="13" fill="#a8d5b5" opacity="0.8" transform="rotate(-6 195 490)"/>
+  <ellipse cx="316" cy="489" rx="46" ry="13" fill="#98c8a8" opacity="0.75" transform="rotate(5 316 489)"/>
+  <ellipse cx="185" cy="493" rx="38" ry="11" fill="#c2e8cc" opacity="0.9" transform="rotate(-15 185 493)"/>
+  <ellipse cx="300" cy="492" rx="40" ry="12" fill="#c8ecd4" opacity="0.88" transform="rotate(12 300 492)"/>
+  <ellipse cx="242" cy="495" rx="55" ry="13" fill="#d6f0dd" opacity="0.92"/>
+  <ellipse cx="165" cy="497" rx="30" ry="9" fill="#e0f5e8" opacity="0.85" transform="rotate(-18 165 497)"/>
+  <ellipse cx="338" cy="496" rx="32" ry="9" fill="#d8f2e0" opacity="0.82" transform="rotate(16 338 496)"/>
+
+  <!-- Petals landing on leaves -->
+  <ellipse cx="215" cy="488" rx="5" ry="7" fill="#f9c6d0" opacity="0.85" transform="rotate(-10 215 488)"/>
+  <ellipse cx="275" cy="486" rx="4" ry="6" fill="#fde8ee" opacity="0.8" transform="rotate(15 275 486)"/>
+  <ellipse cx="308" cy="489" rx="4" ry="6" fill="#f4a7b9" opacity="0.75" transform="rotate(-5 308 489)"/>
+  <ellipse cx="180" cy="492" rx="4" ry="6" fill="#f9c6d0" opacity="0.7" transform="rotate(20 180 492)"/>
 </svg>
