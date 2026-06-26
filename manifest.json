@@ -1,11 +1,11 @@
 {
-  "name": "Manga Shelf",
-  "short_name": "MangaShelf",
-  "description": "Track, review and categorise your manga collection",
+  "name": "Aadu's Library",
+  "short_name": "AaduLib",
+  "description": "Your private manga & danmei collection",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0d0f1a",
-  "theme_color": "#e63946",
+  "background_color": "#fdf5f7",
+  "theme_color": "#f4a7b9",
   "orientation": "portrait",
   "icons": [
     {

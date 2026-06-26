@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="80" fill="#13152a"/>
-  <rect x="60" y="80" width="260" height="340" rx="16" fill="#e63946"/>
-  <rect x="90" y="110" width="200" height="280" rx="8" fill="#f0e6d3"/>
-  <rect x="110" y="140" width="160" height="12" rx="6" fill="#13152a"/>
-  <rect x="110" y="168" width="120" height="8" rx="4" fill="#2a2d45"/>
-  <rect x="110" y="184" width="140" height="8" rx="4" fill="#2a2d45"/>
-  <rect x="110" y="200" width="100" height="8" rx="4" fill="#2a2d45"/>
-  <rect x="192" y="260" width="260" height="160" rx="16" fill="#1e2240" stroke="#e63946" stroke-width="4"/>
-  <text x="322" y="362" font-family="serif" font-size="90" font-weight="bold" fill="#C9A84C" text-anchor="middle">★</text>
+  <rect width="512" height="512" rx="100" fill="#fde8ee"/>
+  <rect x="80" y="100" width="220" height="300" rx="16" fill="#f4a7b9"/>
+  <rect x="100" y="120" width="180" height="260" rx="8" fill="#fff8f9"/>
+  <rect x="120" y="150" width="140" height="10" rx="5" fill="#c06080"/>
+  <rect x="120" y="175" width="110" height="7" rx="3.5" fill="#f0dde4"/>
+  <rect x="120" y="192" width="125" height="7" rx="3.5" fill="#f0dde4"/>
+  <rect x="120" y="209" width="95" height="7" rx="3.5" fill="#f0dde4"/>
+  <circle cx="340" cy="330" r="80" fill="#d6f0dd" stroke="#a8d5b5" stroke-width="4"/>
+  <text x="340" y="355" font-family="serif" font-size="70" fill="#4a7a5a" text-anchor="middle">🌸</text>
 </svg>
