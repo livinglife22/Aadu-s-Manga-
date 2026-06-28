@@ -23,13 +23,11 @@
     }
     body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; min-height: 100vh; min-height: 100dvh; }
 
-    /* LOADING */
     .loading-screen { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #fde8ee 0%, #d6f0dd 100%); gap: 16px; }
     .loading-screen .logo { font-family: 'Playfair Display', serif; font-size: 28px; color: #c06080; }
     .spinner { width: 36px; height: 36px; border: 3px solid var(--pink-mid); border-top-color: var(--pink); border-radius: 50%; animation: spin 0.8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* LOGIN */
     .login-screen { min-height: 100vh; display: none; align-items: center; justify-content: center; padding: 24px; background: linear-gradient(135deg, #fde8ee 0%, #d6f0dd 100%); }
     .login-screen.visible { display: flex; }
     .login-box { background: #fff; border: 1px solid var(--border); border-radius: 24px; padding: 40px 28px; width: 100%; max-width: 380px; text-align: center; box-shadow: 0 8px 40px rgba(244,167,185,0.18); }
@@ -48,11 +46,12 @@
     .login-error { color: #e06080; font-size: 13px; margin-top: 8px; display: none; }
     .login-mode-title { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--muted); margin-bottom: 20px; }
 
-    /* APP */
+    .offline-banner { background: #f0c987; color: #7a5a20; text-align: center; padding: 6px; font-size: 12px; font-weight: 500; display: none; }
+    .offline-banner.show { display: block; }
+
     .app { display: none; }
     .app.visible { display: block; }
 
-    /* HEADER */
     header { background: linear-gradient(135deg, #fff0f4 0%, #edf8f0 100%); border-bottom: 1.5px solid var(--border); padding: 14px 20px; padding-top: max(14px, env(safe-area-inset-top)); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 12px rgba(244,167,185,0.1); }
     .header-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: #c06080; }
     .header-sub { color: var(--muted); font-size: 11px; display: block; margin-top: 1px; }
@@ -60,7 +59,6 @@
     .user-badge { background: var(--pink-light); border: 1px solid var(--pink-mid); border-radius: 20px; padding: 5px 12px; font-size: 11px; color: #c06080; font-weight: 500; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .logout-btn { background: var(--green-light); border: 1px solid var(--green-mid); border-radius: 8px; color: #4a7a5a; padding: 5px 10px; font-size: 11px; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 500; }
 
-    /* SECTION TABS */
     .section-tabs { display: flex; background: #fff; border-bottom: 1.5px solid var(--border); padding: 0 20px; }
     .section-tab { padding: 13px 22px; font-size: 14px; font-weight: 600; cursor: pointer; border-bottom: 3px solid transparent; color: var(--muted); transition: color 0.2s, border-color 0.2s; }
     .section-tab.active-manga { color: #c06080; border-bottom-color: #c06080; }
@@ -68,13 +66,11 @@
 
     main { max-width: 900px; margin: 0 auto; padding: 20px 16px; padding-bottom: max(80px, calc(env(safe-area-inset-bottom) + 80px)); }
 
-    /* SEARCH */
     .search-wrap { position: relative; margin-bottom: 14px; }
     .search-wrap .ico { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 14px; }
     .search-wrap input { width: 100%; background: #fff; border: 1.5px solid var(--border); border-radius: 12px; color: var(--text); padding: 11px 14px 11px 38px; font-size: 14px; font-family: 'Inter', sans-serif; outline: none; transition: border-color 0.2s; box-shadow: 0 2px 8px rgba(244,167,185,0.08); }
     .search-wrap input:focus { border-color: var(--pink); }
 
-    /* CONTROLS */
     .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; margin-bottom: 20px; }
     .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
     .tab-btn { background: #fff; color: var(--muted); border: 1.5px solid var(--border); border-radius: 20px; padding: 6px 14px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
@@ -83,13 +79,13 @@
     .tab-btn.active-completed { background: #a8c5d4; border-color: #a8c5d4; color: #fff; }
     .tab-btn.active-hiatus { background: #f0c987; border-color: #f0c987; color: #fff; }
     .tab-btn.active-dropped { background: #e8a4a4; border-color: #e8a4a4; color: #fff; }
+    .tab-btn.active-favourites { background: #f4a7b9; border-color: #f4a7b9; color: #fff; }
     select { background: #fff; border: 1.5px solid var(--border); border-radius: 10px; color: var(--text); padding: 6px 10px; font-family: 'Inter', sans-serif; font-size: 12px; outline: none; cursor: pointer; }
 
-    /* GRID */
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 14px; }
 
     /* CARD */
-    .card { background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s; box-shadow: 0 2px 12px rgba(244,167,185,0.08); -webkit-tap-highlight-color: transparent; }
+    .card { background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s; box-shadow: 0 2px 12px rgba(244,167,185,0.08); -webkit-tap-highlight-color: transparent; position: relative; }
     .card:active { transform: scale(0.97); }
     .card:hover { transform: translateY(-4px); border-color: var(--pink); box-shadow: 0 8px 24px rgba(244,167,185,0.2); }
     .card.danmei-card:hover { border-color: var(--purple); box-shadow: 0 8px 24px rgba(201,167,212,0.2); }
@@ -103,6 +99,12 @@
     .badge-completed { background: #a8c5d4; color: #fff; }
     .badge-dropped { background: #e8a4a4; color: #fff; }
     .badge-hiatus { background: #f0c987; color: #fff; }
+
+    /* FAVOURITE HEART BUTTON */
+    .fav-btn { position: absolute; top: 8px; left: 8px; background: rgba(255,255,255,0.85); border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; z-index: 5; transition: transform 0.15s; -webkit-tap-highlight-color: transparent; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .fav-btn:active { transform: scale(0.85); }
+    .fav-btn.faved { background: rgba(255,255,255,0.95); }
+
     .card-body { padding: 11px 12px; flex: 1; display: flex; flex-direction: column; gap: 5px; }
     .card-title { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--text); line-height: 1.3; }
     .danmei-card .card-title { font-family: 'Noto Serif SC', serif; font-size: 13px; font-weight: 600; color: #5a3a6a; }
@@ -116,11 +118,9 @@
     .danmei-card .card-tag { color: #9a6aaa; }
     .chapter-count { background: var(--purple-light); color: #7a5a8a; font-size: 10px; border-radius: 6px; padding: 2px 6px; display: inline-block; }
 
-    /* EMPTY */
     .empty { text-align: center; padding: 60px 0; color: var(--muted); }
     .empty-icon { font-size: 48px; margin-bottom: 12px; }
 
-    /* FAB */
     .add-btn { position: fixed; bottom: max(24px, env(safe-area-inset-bottom)); right: 20px; background: linear-gradient(135deg, var(--pink) 0%, #e8859a 100%); color: #fff; border: none; border-radius: 50%; width: 56px; height: 56px; font-size: 26px; cursor: pointer; box-shadow: 0 4px 20px rgba(244,167,185,0.5); display: flex; align-items: center; justify-content: center; z-index: 40; transition: transform 0.15s; -webkit-tap-highlight-color: transparent; }
     .add-btn:active { transform: scale(0.93); }
     .add-btn.danmei-mode { background: linear-gradient(135deg, var(--purple) 0%, #b08ac0 100%); box-shadow: 0 4px 20px rgba(201,167,212,0.5); }
@@ -156,26 +156,41 @@
     .rm-img { position: absolute; top: -5px; right: -5px; background: var(--pink); color: #fff; border-radius: 50%; width: 17px; height: 17px; display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; font-weight: 700; border: none; }
     .img-add { width: 70px; height: 70px; border: 2px dashed var(--pink-mid); border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; color: var(--muted); font-size: 20px; margin-bottom: 14px; background: var(--pink-light); }
 
-    /* LINKS SECTION */
+    /* LINKS */
     .links-section { margin-bottom: 14px; }
     .link-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px; }
     .link-item { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid var(--border); border-radius: 10px; padding: 8px 12px; }
     .link-item a { color: #c06080; font-size: 12px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-decoration: none; }
-    .danmei-mode-link .link-item a { color: #7a5a8a; }
     .link-rm { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 16px; }
     .link-input-row { display: flex; gap: 8px; }
     .link-input-row input { margin-bottom: 0; flex: 1; }
     .link-add-btn { background: var(--pink-light); color: #c06080; border: 1.5px solid var(--pink-mid); border-radius: 10px; padding: 10px 14px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; white-space: nowrap; }
 
-    /* CHAPTER SECTION */
-    .chapter-section { margin-top: 8px; }
-    .chapter-section h3 { color: #7a5a8a; font-size: 13px; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; }
-    .add-ch-btn { background: var(--purple-light); color: #7a5a8a; border: 1px solid var(--purple-mid); border-radius: 8px; padding: 4px 10px; font-size: 11px; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600; }
-    .chapter-list { display: flex; flex-direction: column; gap: 6px; max-height: 180px; overflow-y: auto; }
-    .chapter-item { background: #fff; border: 1.5px solid var(--border); border-radius: 10px; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; }
-    .chapter-item span { color: var(--text); font-size: 12px; }
-    .chapter-item .ch-date { color: var(--muted); font-size: 10px; display: block; }
-    .private-badge { background: var(--purple-light); color: #7a5a8a; border-radius: 20px; padding: 2px 8px; font-size: 10px; font-weight: 600; white-space: nowrap; }
+    /* ARC SYSTEM */
+    .arc-section { margin-top: 8px; }
+    .arc-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .arc-section-header h3 { color: #7a5a8a; font-size: 13px; font-weight: 600; }
+    .add-arc-btn { background: var(--purple-light); color: #7a5a8a; border: 1px solid var(--purple-mid); border-radius: 8px; padding: 5px 12px; font-size: 11px; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .arc-list { display: flex; flex-direction: column; gap: 8px; }
+    .arc-item { background: #fff; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .arc-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; cursor: pointer; transition: background 0.15s; }
+    .arc-header:hover { background: var(--purple-light); }
+    .arc-header-left { display: flex; align-items: center; gap: 8px; }
+    .arc-toggle { color: var(--muted); font-size: 12px; transition: transform 0.2s; }
+    .arc-toggle.open { transform: rotate(90deg); }
+    .arc-name { font-size: 13px; font-weight: 600; color: #5a3a6a; }
+    .arc-chapter-count { font-size: 10px; color: var(--muted); background: var(--purple-light); border-radius: 20px; padding: 2px 8px; }
+    .arc-actions { display: flex; gap: 6px; }
+    .arc-actions button { background: none; border: none; color: var(--muted); font-size: 13px; cursor: pointer; padding: 2px 4px; }
+    .arc-chapters { display: none; border-top: 1px solid var(--border); }
+    .arc-chapters.open { display: block; }
+    .arc-chapter-list { padding: 8px; display: flex; flex-direction: column; gap: 4px; }
+    .arc-chapter-item { background: var(--purple-light); border-radius: 8px; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background 0.15s; }
+    .arc-chapter-item:hover { background: var(--purple-mid); }
+    .arc-chapter-item span { color: #5a3a6a; font-size: 12px; }
+    .arc-chapter-item .ch-date { color: var(--muted); font-size: 10px; }
+    .arc-chapter-item .rm-ch { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 14px; }
+    .add-chapter-to-arc { width: 100%; background: none; border: 1.5px dashed var(--purple-mid); border-radius: 8px; padding: 7px; color: #9a6aaa; font-size: 12px; cursor: pointer; font-family: 'Inter', sans-serif; margin: 4px 8px 8px; width: calc(100% - 16px); }
 
     /* CHAPTER EDITOR */
     .chapter-editor { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 200; flex-direction: column; padding: 20px; padding-top: max(20px, env(safe-area-inset-top)); }
@@ -186,7 +201,6 @@
     .chapter-editor textarea { flex: 1; background: #fff; border: 1.5px solid var(--border); border-radius: 12px; color: var(--text); padding: 14px; font-size: 15px; font-family: 'Georgia', serif; line-height: 1.8; outline: none; resize: none; }
     .chapter-save-btn { background: linear-gradient(135deg, var(--purple) 0%, #b08ac0 100%); color: #fff; border: none; border-radius: 12px; padding: 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; cursor: pointer; margin-top: 12px; box-shadow: 0 4px 14px rgba(201,167,212,0.3); }
 
-    /* MODAL FOOTER */
     .modal-footer { display: flex; gap: 10px; margin-top: 20px; }
     .modal-footer button { flex: 1; padding: 13px; border: none; border-radius: 12px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; cursor: pointer; transition: opacity 0.15s; }
     .modal-footer button:hover { opacity: 0.88; }
@@ -194,7 +208,6 @@
     .btn-save-danmei { background: linear-gradient(135deg, var(--purple) 0%, #b08ac0 100%); color: #fff; box-shadow: 0 4px 14px rgba(201,167,212,0.3); }
     .btn-delete { background: var(--pink-light); color: #c06080; flex: 0 !important; padding: 13px 16px !important; border: 1.5px solid var(--pink-mid) !important; }
 
-    /* SAVING INDICATOR */
     .saving { position: fixed; bottom: 90px; right: 20px; background: var(--green); color: #fff; border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 500; z-index: 60; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
     .saving.show { opacity: 1; }
 
@@ -208,17 +221,15 @@
 </head>
 <body>
 
-<!-- LOADING -->
 <div class="loading-screen" id="loadingScreen">
-  <div class="login-icon">🌸</div>
+  <div class="login-icon">🌸🐼</div>
   <div class="logo">Aadu's Library</div>
   <div class="spinner"></div>
 </div>
 
-<!-- LOGIN -->
 <div class="login-screen" id="loginScreen">
   <div class="login-box">
-    <div class="login-icon">🌸🐉</div>
+    <div class="login-icon">🌸🐼</div>
     <div class="login-logo">Aadu's Library</div>
     <div class="login-tagline">Your private manga & danmei collection</div>
     <div class="login-mode-title" id="loginModeTitle">Welcome back!</div>
@@ -234,15 +245,15 @@
   </div>
 </div>
 
-<!-- APP -->
 <div class="app" id="mainApp">
+  <div class="offline-banner" id="offlineBanner">📴 You're offline — showing cached data</div>
   <header>
     <div>
       <div class="header-logo">🌸 Aadu's Library</div>
       <small class="header-sub" id="totalCount">Loading…</small>
     </div>
     <div class="header-right">
-      <span class="user-badge" id="userBadge">👤</span>
+      <span class="user-badge">👤 Aadeshma</span>
       <button class="logout-btn" onclick="handleLogout()">Logout</button>
     </div>
   </header>
@@ -263,6 +274,7 @@
         <button class="tab-btn active-all" data-tab="all" onclick="setTab('all','manga')">All</button>
         <button class="tab-btn" data-tab="ongoing" onclick="setTab('ongoing','manga')">📖 Ongoing</button>
         <button class="tab-btn" data-tab="completed" onclick="setTab('completed','manga')">✅ Done</button>
+        <button class="tab-btn" data-tab="favourites" onclick="setTab('favourites','manga')">❤️ Faves</button>
       </div>
       <select id="mangaGenre" onchange="renderCards()">
         <option value="All">All Genres</option>
@@ -281,6 +293,7 @@
         <button class="tab-btn" data-tab="completed" onclick="setTab('completed','danmei')">✅ Done</button>
         <button class="tab-btn" data-tab="hiatus" onclick="setTab('hiatus','danmei')">⏸ Hiatus</button>
         <button class="tab-btn" data-tab="dropped" onclick="setTab('dropped','danmei')">❌ Dropped</button>
+        <button class="tab-btn" data-tab="favourites" onclick="setTab('favourites','danmei')">❤️ Faves</button>
       </div>
       <select id="danmeiGenre" onchange="renderCards()">
         <option value="All">All Genres</option>
@@ -314,7 +327,6 @@
     <label class="fl">Title</label>
     <input type="text" id="fTitle" placeholder="Title"/>
 
-    <!-- MANGA FIELDS -->
     <div id="mangaFields">
       <label class="fl">Genre</label>
       <select class="ms" id="fGenreManga">
@@ -333,7 +345,6 @@
       <input type="number" id="fChapters" placeholder="e.g. 45"/>
     </div>
 
-    <!-- DANMEI FIELDS -->
     <div id="danmeiFields" style="display:none">
       <label class="fl">Author</label>
       <input type="text" id="fAuthor" placeholder="Author name"/>
@@ -365,7 +376,7 @@
     <input type="file" id="coverInput" accept="image/*" style="display:none" onchange="handleCover(event)"/>
 
     <div id="panelSection">
-      <label class="fl">Panel Photos (memory aid)</label>
+      <label class="fl">Panel Photos</label>
       <div class="img-preview-row" id="panelPreview"></div>
       <div class="img-add" onclick="document.getElementById('panelInput').click()">
         <span>+</span><span style="font-size:9px;margin-top:2px">Panel</span>
@@ -392,20 +403,22 @@
       <button class="tag-add-btn" onclick="addTag()">Add</button>
     </div>
 
-    <!-- LINKS -->
-    <label class="fl">🔗 Links (where you read it)</label>
-    <div class="links-section" id="linksSection">
+    <label class="fl">🔗 Links</label>
+    <div class="links-section">
       <div class="link-list" id="linkList"></div>
       <div class="link-input-row">
-        <input type="url" id="linkInput" placeholder="https://..." onkeydown="if(event.key==='Enter'){event.preventDefault();addLink()}"/>
+        <input type="url" id="linkInput" placeholder="https://…" onkeydown="if(event.key==='Enter'){event.preventDefault();addLink()}"/>
         <button class="link-add-btn" onclick="addLink()">Add</button>
       </div>
     </div>
 
-    <!-- PRIVATE CHAPTERS (danmei only) -->
-    <div id="chapterSection" style="display:none" class="chapter-section">
-      <h3>🔒 Private Chapters <button class="add-ch-btn" onclick="openChapterEditor()">+ Add Chapter</button></h3>
-      <div class="chapter-list" id="chapterList"></div>
+    <!-- ARC SYSTEM (danmei + multiples) -->
+    <div id="arcSection" style="display:none" class="arc-section">
+      <div class="arc-section-header">
+        <h3>🔒 Arcs & Chapters</h3>
+        <button class="add-arc-btn" onclick="addArc()">+ Add Arc</button>
+      </div>
+      <div class="arc-list" id="arcList"></div>
     </div>
 
     <div class="modal-footer">
@@ -419,37 +432,56 @@
 <div class="chapter-editor" id="chapterEditor">
   <div class="chapter-editor-header">
     <button onclick="closeChapterEditor()">← Back</button>
-    <input type="text" id="chapterTitle" placeholder="Chapter title e.g. Chapter 69 — The Kiss"/>
+    <input type="text" id="chapterTitle" placeholder="Chapter title e.g. Ch.69 — The Kiss"/>
   </div>
   <textarea id="chapterContent" placeholder="Paste or type chapter content here…"></textarea>
   <button class="chapter-save-btn" onclick="saveChapter()">🔒 Save Chapter Privately</button>
 </div>
 
 <script>
-  // ── SUPABASE SETUP ─────────────────────────────────
   const SUPABASE_URL = 'https://tlpkzwfbbkuhluddyivq.supabase.co';
   const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRscGt6d2ZiYmt1aGx1ZGR5aXZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0OTQ0NzksImV4cCI6MjA5ODA3MDQ3OX0.3E8ZDVxbNTWQVG8bF2hXLoYshxN2HIVN-8fDqdYWh5Y';
   const { createClient } = supabase;
   const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-  // ── STATE ──────────────────────────────────────────
+  const CACHE_KEY = 'aadu_library_cache';
+
   let mangaList = [], danmeiList = [];
   let currentSection = 'manga', currentTab = 'all';
   let currentTags = [], currentCover = null, currentPanels = [], currentRating = 0;
-  let currentChapters = [], currentLinks = [], currentStatus = 'ongoing';
-  let currentUser = null;
-  let isSignUp = false;
+  let currentArcs = [], currentLinks = [], currentStatus = 'ongoing';
+  let currentUser = null, isSignUp = false, isOffline = false;
+  let editingArcIdx = -1, editingChapterArcIdx = -1, editingChapterIdx = -1;
+
+  // ── OFFLINE ────────────────────────────────────────
+  window.addEventListener('online', () => { isOffline=false; document.getElementById('offlineBanner').classList.remove('show'); syncIfNeeded(); });
+  window.addEventListener('offline', () => { isOffline=true; document.getElementById('offlineBanner').classList.add('show'); });
+
+  function saveCache() {
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify({ mangaList, danmeiList })); } catch(e) {}
+  }
+
+  function loadCache() {
+    try {
+      const c = JSON.parse(localStorage.getItem(CACHE_KEY) || '{}');
+      if (c.mangaList) mangaList = c.mangaList;
+      if (c.danmeiList) danmeiList = c.danmeiList;
+    } catch(e) {}
+  }
+
+  async function syncIfNeeded() {
+    if (!currentUser) return;
+    await loadData();
+    renderCards();
+  }
 
   // ── AUTH ───────────────────────────────────────────
   async function init() {
+    if (!navigator.onLine) { isOffline = true; document.getElementById('offlineBanner').classList.add('show'); }
     const { data: { session } } = await sb.auth.getSession();
     document.getElementById('loadingScreen').style.display = 'none';
-    if (session) {
-      currentUser = session.user;
-      showApp();
-    } else {
-      document.getElementById('loginScreen').classList.add('visible');
-    }
+    if (session) { currentUser = session.user; showApp(); }
+    else { document.getElementById('loginScreen').classList.add('visible'); }
   }
 
   function toggleAuthMode() {
@@ -469,32 +501,12 @@
     const errEl = document.getElementById('loginError');
     errEl.style.display = 'none';
     if (!email || !pass) { errEl.textContent = 'Please enter email and password'; errEl.style.display = 'block'; return; }
-
     document.getElementById('loginBtn').textContent = '…';
-    const remember = document.getElementById('rememberMe').checked;
-
-    let result;
-    if (isSignUp) {
-      result = await sb.auth.signUp({ email, password: pass });
-    } else {
-      result = await sb.auth.signInWithPassword({ email, password: pass });
-    }
-
-    if (result.error) {
-      errEl.textContent = result.error.message;
-      errEl.style.display = 'block';
-      document.getElementById('loginBtn').textContent = isSignUp ? 'Sign Up' : 'Sign In';
-      return;
-    }
-
-    if (isSignUp && !result.data.session) {
-      errEl.style.color = '#4a7a5a';
-      errEl.textContent = '✅ Check your email to confirm your account!';
-      errEl.style.display = 'block';
-      document.getElementById('loginBtn').textContent = 'Sign Up';
-      return;
-    }
-
+    const result = isSignUp
+      ? await sb.auth.signUp({ email, password: pass })
+      : await sb.auth.signInWithPassword({ email, password: pass });
+    if (result.error) { errEl.textContent = result.error.message; errEl.style.display = 'block'; document.getElementById('loginBtn').textContent = isSignUp ? 'Sign Up' : 'Sign In'; return; }
+    if (isSignUp && !result.data.session) { errEl.style.color='#4a7a5a'; errEl.textContent='✅ Check your email to confirm!'; errEl.style.display='block'; document.getElementById('loginBtn').textContent='Sign Up'; return; }
     currentUser = result.data.user;
     document.getElementById('loginScreen').classList.remove('visible');
     showApp();
@@ -502,8 +514,7 @@
 
   async function handleLogout() {
     await sb.auth.signOut();
-    currentUser = null;
-    mangaList = []; danmeiList = [];
+    currentUser = null; mangaList = []; danmeiList = [];
     document.getElementById('mainApp').classList.remove('visible');
     document.getElementById('loginScreen').classList.add('visible');
     document.getElementById('loginBtn').textContent = 'Sign In';
@@ -512,9 +523,9 @@
 
   async function showApp() {
     document.getElementById('mainApp').classList.add('visible');
-    document.getElementById('userBadge').textContent = '👤 Aadeshma';
-    await loadData();
+    loadCache();
     renderCards();
+    if (navigator.onLine) { await loadData(); renderCards(); }
   }
 
   // ── DATA ───────────────────────────────────────────
@@ -525,12 +536,30 @@
     ]);
     mangaList = mg || [];
     danmeiList = dm || [];
+    saveCache();
   }
 
   function showSaving() {
     const el = document.getElementById('savingIndicator');
     el.classList.add('show');
     setTimeout(() => el.classList.remove('show'), 2000);
+  }
+
+  // ── FAVOURITE ──────────────────────────────────────
+  async function toggleFav(e, id) {
+    e.stopPropagation();
+    const isDanmei = currentSection === 'danmei';
+    const list = isDanmei ? danmeiList : mangaList;
+    const item = list.find(m => m.id === id);
+    if (!item) return;
+    const newFav = !item.favourite;
+    item.favourite = newFav;
+    saveCache();
+    renderCards();
+    if (navigator.onLine) {
+      const table = isDanmei ? 'danmei' : 'manga';
+      await sb.from(table).update({ favourite: newFav }).eq('id', id);
+    }
   }
 
   // ── RENDER ─────────────────────────────────────────
@@ -543,6 +572,7 @@
     const grid = document.getElementById('grid'); const empty = document.getElementById('empty');
 
     const filtered = list.filter(m => {
+      if (currentTab === 'favourites') return m.favourite;
       if (currentTab !== 'all' && m.status !== currentTab) return false;
       if (genre !== 'All' && m.genre !== genre) return false;
       if (term) {
@@ -571,16 +601,18 @@
     const cover = m.cover ? `<img src="${m.cover}" alt="${m.title}" loading="lazy"/>` : `<div class="no-cover">${isDanmei?'🐉':'🌸'}<span class="lbl">${isDanmei?'Danmei':'Manga'}</span></div>`;
     const tags = (m.hashtags||[]).slice(0,2).map(t=>`<span class="card-tag">#${t}</span>`).join('');
     const progress = isDanmei && m.total_chapters ? `<div class="card-sub">Ch.${m.current_chapter||0}/${m.total_chapters}</div>` : '';
-    const chCount = isDanmei && m.saved_chapters && m.saved_chapters.length ? `<span class="chapter-count">🔒 ${m.saved_chapters.length} saved</span>` : '';
+    const arcCount = m.saved_chapters && m.saved_chapters.length ? `<span class="chapter-count">🔒 ${m.saved_chapters.length} arc${m.saved_chapters.length>1?'s':''}</span>` : '';
     const author = isDanmei && m.author ? `<div class="card-sub" style="font-size:10px;color:#9a7aaa">${m.author}</div>` : '';
     const linkCount = m.links && m.links.length ? `<div class="card-sub">🔗 ${m.links.length} link${m.links.length>1?'s':''}</div>` : '';
+    const heart = m.favourite ? '❤️' : '🤍';
     return `<div class="card${isDanmei?' danmei-card':''}" onclick="openModal('${m.id}')">
+      <button class="fav-btn${m.favourite?' faved':''}" onclick="toggleFav(event,'${m.id}')">${heart}</button>
       <div class="card-cover">${cover}<span class="status-badge badge-${m.status}">${m.status}</span></div>
       <div class="card-body">
         <div class="card-title">${m.title}</div>
         ${author}
         <div class="card-meta"><span class="genre-tag">${m.genre}</span><span class="stars">${starsHTML(m.rating||0)}</span></div>
-        ${progress}${chCount}${linkCount}
+        ${progress}${arcCount}${linkCount}
         ${m.hashtags&&m.hashtags.length?`<div class="card-tags">${tags}</div>`:''}
       </div>
     </div>`;
@@ -614,12 +646,11 @@
     document.body.style.overflow = 'hidden';
     document.getElementById('mangaFields').style.display = isDanmei ? 'none' : 'block';
     document.getElementById('danmeiFields').style.display = isDanmei ? 'block' : 'none';
-    document.getElementById('chapterSection').style.display = isDanmei ? 'block' : 'none';
+    document.getElementById('arcSection').style.display = isDanmei ? 'block' : 'none';
     document.getElementById('panelSection').style.display = isDanmei ? 'none' : 'block';
     document.getElementById('modalTitle').className = isDanmei ? 'danmei-h' : '';
     document.getElementById('saveBtn').className = isDanmei ? 'btn-save-danmei' : 'btn-save-manga';
     document.getElementById('editSection').value = currentSection;
-    document.getElementById('linkInput').style.setProperty('--accent', isDanmei ? 'var(--purple)' : 'var(--pink)');
 
     if (id && id !== 'undefined') {
       const m = list.find(x => x.id === id);
@@ -640,8 +671,8 @@
         document.getElementById('fGenreDanmei').value = m.genre;
         document.getElementById('fTotalChapters').value = m.total_chapters || '';
         document.getElementById('fCurrentChapter').value = m.current_chapter || '';
-        currentChapters = [...(m.saved_chapters || [])];
-        setStatus(m.status, true); renderChapterList();
+        currentArcs = JSON.parse(JSON.stringify(m.saved_chapters || []));
+        setStatus(m.status, true); renderArcList();
       } else {
         document.getElementById('fGenreManga').value = m.genre;
         document.getElementById('fChapters').value = m.chapters || '';
@@ -657,7 +688,7 @@
       document.getElementById('fReview').value = '';
       if (isDanmei) { document.getElementById('fAuthor').value=''; document.getElementById('fTotalChapters').value=''; document.getElementById('fCurrentChapter').value=''; }
       else { document.getElementById('fChapters').value=''; }
-      currentCover=null; currentTags=[]; currentRating=0; currentChapters=[]; currentPanels=[]; currentLinks=[];
+      currentCover=null; currentTags=[]; currentRating=0; currentArcs=[]; currentPanels=[]; currentLinks=[];
       currentStatus = isDanmei ? 'reading' : 'ongoing';
       setStatus(currentStatus, isDanmei);
     }
@@ -667,7 +698,6 @@
   function closeModal() { document.getElementById('overlay').classList.remove('open'); document.body.style.overflow=''; }
   function overlayClick(e) { if(e.target===document.getElementById('overlay')) closeModal(); }
 
-  // ── STATUS ─────────────────────────────────────────
   function setStatus(s, isDanmei) {
     currentStatus = s;
     const p = isDanmei !== false && (isDanmei === true || document.getElementById('editSection').value === 'danmei') ? 'ds' : 'ms';
@@ -676,11 +706,9 @@
     if (el) { const c={ongoing:'#a8d5b5',reading:'#c9a7d4',completed:'#a8c5d4',hiatus:'#f0c987',dropped:'#e8a4a4'}; el.style.background=c[s]||'#f4a7b9'; el.style.color='#fff'; el.style.borderColor=el.style.background; }
   }
 
-  // ── STARS ──────────────────────────────────────────
   function setRating(r) { currentRating=r; renderStars(); }
   function renderStars() { document.querySelectorAll('#starInput span').forEach(s=>s.classList.toggle('lit',parseInt(s.dataset.s)<=currentRating)); }
 
-  // ── TAGS ───────────────────────────────────────────
   function addTag() {
     const inp=document.getElementById('tagInput');
     const val=inp.value.trim().replace(/^#/,'').toLowerCase();
@@ -693,7 +721,6 @@
     document.getElementById('tagList').innerHTML=currentTags.map(t=>`<span class="tag-pill${isDanmei?' dp':''}">#${t}<span class="rm" onclick="removeTag('${t}')">×</span></span>`).join('');
   }
 
-  // ── LINKS ──────────────────────────────────────────
   function addLink() {
     const inp=document.getElementById('linkInput');
     const val=inp.value.trim();
@@ -709,7 +736,6 @@
       </div>`).join('');
   }
 
-  // ── IMAGES ─────────────────────────────────────────
   function compressImage(file, maxSize=400) {
     return new Promise(res=>{
       const r=new FileReader();
@@ -751,74 +777,163 @@
     document.getElementById('panelPreview').innerHTML=currentPanels.map((p,i)=>`<div class="img-thumb"><img src="${p}"/><button class="rm-img" onclick="removePanel(${i})">×</button></div>`).join('');
   }
 
-  // ── CHAPTER EDITOR ─────────────────────────────────
-  let editingChapterIdx = -1;
-  function openChapterEditor(idx) {
-    editingChapterIdx = idx !== undefined ? idx : -1;
-    document.getElementById('chapterTitle').value = idx !== undefined ? currentChapters[idx].title : '';
-    document.getElementById('chapterContent').value = idx !== undefined ? currentChapters[idx].content : '';
+  // ── ARC SYSTEM ─────────────────────────────────────
+  function addArc() {
+    const name = prompt('Arc name (e.g. Arc 1: The Emperor\'s Palace):');
+    if (!name) return;
+    currentArcs.push({ id: Date.now(), name, chapters: [] });
+    renderArcList();
+  }
+
+  function deleteArc(i) {
+    if (!confirm('Delete this arc and all its chapters?')) return;
+    currentArcs.splice(i, 1);
+    renderArcList();
+  }
+
+  function renameArc(i) {
+    const name = prompt('New arc name:', currentArcs[i].name);
+    if (!name) return;
+    currentArcs[i].name = name;
+    renderArcList();
+  }
+
+  function toggleArc(i) {
+    const el = document.getElementById(`arc-chapters-${i}`);
+    const tog = document.getElementById(`arc-toggle-${i}`);
+    el.classList.toggle('open');
+    tog.classList.toggle('open');
+  }
+
+  function openChapterEditor(arcIdx, chIdx) {
+    editingArcIdx = arcIdx;
+    editingChapterIdx = chIdx !== undefined ? chIdx : -1;
+    const ch = chIdx !== undefined ? currentArcs[arcIdx].chapters[chIdx] : null;
+    document.getElementById('chapterTitle').value = ch ? ch.title : '';
+    document.getElementById('chapterContent').value = ch ? ch.content : '';
     document.getElementById('chapterEditor').classList.add('open');
   }
+
   function closeChapterEditor() { document.getElementById('chapterEditor').classList.remove('open'); }
+
   function saveChapter() {
-    const title=document.getElementById('chapterTitle').value.trim();
-    const content=document.getElementById('chapterContent').value.trim();
-    if(!title||!content){alert('Please add a title and content.');return;}
-    const ch={id:Date.now(),title,content,date:new Date().toISOString().split('T')[0]};
-    if(editingChapterIdx>=0){currentChapters[editingChapterIdx]=ch;}else{currentChapters.push(ch);}
-    renderChapterList();closeChapterEditor();
+    const title = document.getElementById('chapterTitle').value.trim();
+    const content = document.getElementById('chapterContent').value.trim();
+    if (!title || !content) { alert('Please add a title and content.'); return; }
+    const ch = { id: Date.now(), title, content, date: new Date().toISOString().split('T')[0] };
+    if (editingChapterIdx >= 0) {
+      currentArcs[editingArcIdx].chapters[editingChapterIdx] = ch;
+    } else {
+      currentArcs[editingArcIdx].chapters.push(ch);
+    }
+    renderArcList();
+    closeChapterEditor();
   }
-  function renderChapterList(){
-    document.getElementById('chapterList').innerHTML=currentChapters.length
-      ?currentChapters.map((c,i)=>`
-        <div class="chapter-item" onclick="openChapterEditor(${i})">
-          <div><span>${c.title}</span><span class="ch-date">${c.date}</span></div>
-          <span class="private-badge">🔒 Private</span>
-        </div>`).join('')
-      :'<div style="color:var(--muted);font-size:12px;padding:8px 0">No chapters saved yet</div>';
+
+  function deleteChapter(arcIdx, chIdx) {
+    currentArcs[arcIdx].chapters.splice(chIdx, 1);
+    renderArcList();
+  }
+
+  function renderArcList() {
+    const el = document.getElementById('arcList');
+    if (!currentArcs.length) {
+      el.innerHTML = '<div style="color:var(--muted);font-size:12px;padding:8px 0">No arcs yet — tap + Add Arc to get started!</div>';
+      return;
+    }
+    el.innerHTML = currentArcs.map((arc, i) => `
+      <div class="arc-item">
+        <div class="arc-header" onclick="toggleArc(${i})">
+          <div class="arc-header-left">
+            <span class="arc-toggle" id="arc-toggle-${i}">▶</span>
+            <span class="arc-name">${arc.name}</span>
+            <span class="arc-chapter-count">${arc.chapters.length} ch</span>
+          </div>
+          <div class="arc-actions" onclick="event.stopPropagation()">
+            <button onclick="renameArc(${i})" title="Rename">✏️</button>
+            <button onclick="deleteArc(${i})" title="Delete">🗑</button>
+          </div>
+        </div>
+        <div class="arc-chapters" id="arc-chapters-${i}">
+          <div class="arc-chapter-list">
+            ${arc.chapters.map((ch, j) => `
+              <div class="arc-chapter-item" onclick="openChapterEditor(${i},${j})">
+                <div>
+                  <span>${ch.title}</span>
+                  <span class="ch-date">${ch.date}</span>
+                </div>
+                <button class="rm-ch" onclick="event.stopPropagation();deleteChapter(${i},${j})">×</button>
+              </div>`).join('')}
+          </div>
+          <button class="add-chapter-to-arc" onclick="openChapterEditor(${i})">+ Add Chapter to this Arc</button>
+        </div>
+      </div>`).join('');
   }
 
   // ── SAVE / DELETE ──────────────────────────────────
   async function saveEntry() {
-    const title=document.getElementById('fTitle').value.trim();
-    if(!title){alert('Please enter a title.');return;}
-    const isDanmei=document.getElementById('editSection').value==='danmei';
-    const id=document.getElementById('editId').value||null;
-    document.getElementById('saveBtn').textContent='Saving…';
+    const title = document.getElementById('fTitle').value.trim();
+    if (!title) { alert('Please enter a title.'); return; }
+    const isDanmei = document.getElementById('editSection').value === 'danmei';
+    const id = document.getElementById('editId').value || null;
+    document.getElementById('saveBtn').textContent = 'Saving…';
 
-    const base={title,genre:isDanmei?document.getElementById('fGenreDanmei').value:document.getElementById('fGenreManga').value,status:currentStatus,cover:currentCover,rating:currentRating,review:document.getElementById('fReview').value.trim(),hashtags:currentTags,links:currentLinks,user_id:currentUser.id};
+    const base = { title, genre: isDanmei?document.getElementById('fGenreDanmei').value:document.getElementById('fGenreManga').value, status: currentStatus, cover: currentCover, rating: currentRating, review: document.getElementById('fReview').value.trim(), hashtags: currentTags, links: currentLinks, user_id: currentUser.id };
 
-    let data,error;
-    if(isDanmei){
-      const entry={...base,author:document.getElementById('fAuthor').value,total_chapters:document.getElementById('fTotalChapters').value,current_chapter:document.getElementById('fCurrentChapter').value,saved_chapters:currentChapters};
-      if(id){({data,error}=await sb.from('danmei').update(entry).eq('id',id).select().single());}
-      else{({data,error}=await sb.from('danmei').insert(entry).select().single());}
-      if(!error){if(id){danmeiList=danmeiList.map(m=>m.id===id?data:m);}else{danmeiList=[data,...danmeiList];}}
+    let entry, table;
+    if (isDanmei) {
+      entry = { ...base, author: document.getElementById('fAuthor').value, total_chapters: document.getElementById('fTotalChapters').value, current_chapter: document.getElementById('fCurrentChapter').value, saved_chapters: currentArcs };
+      table = 'danmei';
     } else {
-      const entry={...base,chapters:document.getElementById('fChapters').value,panels:currentPanels};
-      if(id){({data,error}=await sb.from('manga').update(entry).eq('id',id).select().single());}
-      else{({data,error}=await sb.from('manga').insert(entry).select().single());}
-      if(!error){if(id){mangaList=mangaList.map(m=>m.id===id?data:m);}else{mangaList=[data,...mangaList];}}
+      entry = { ...base, chapters: document.getElementById('fChapters').value, panels: currentPanels };
+      table = 'manga';
     }
 
-    if(error){alert('Error saving: '+error.message);document.getElementById('saveBtn').textContent='Save Changes';return;}
-    showSaving();closeModal();renderCards();
+    // Save locally first for offline support
+    if (id) {
+      if (isDanmei) danmeiList = danmeiList.map(m => m.id === id ? {...m, ...entry} : m);
+      else mangaList = mangaList.map(m => m.id === id ? {...m, ...entry} : m);
+    } else {
+      const localEntry = { ...entry, id: 'local_' + Date.now(), created_at: new Date().toISOString() };
+      if (isDanmei) danmeiList = [localEntry, ...danmeiList];
+      else mangaList = [localEntry, ...mangaList];
+    }
+    saveCache();
+
+    // Sync to Supabase if online
+    if (navigator.onLine) {
+      let data, error;
+      if (id && !id.startsWith('local_')) {
+        ({ data, error } = await sb.from(table).update(entry).eq('id', id).select().single());
+      } else {
+        const { id: _id, ...insertEntry } = entry;
+        ({ data, error } = await sb.from(table).insert(insertEntry).select().single());
+      }
+      if (!error && data) {
+        if (isDanmei) danmeiList = id ? danmeiList.map(m => (m.id===id||m.id===entry.id)?data:m) : [data, ...danmeiList.filter(m=>!m.id.toString().startsWith('local_'))];
+        else mangaList = id ? mangaList.map(m => (m.id===id||m.id===entry.id)?data:m) : [data, ...mangaList.filter(m=>!m.id.toString().startsWith('local_'))];
+        saveCache();
+      }
+    }
+
+    showSaving(); closeModal(); renderCards();
   }
 
   async function deleteEntry() {
-    const id=document.getElementById('editId').value;
-    const isDanmei=document.getElementById('editSection').value==='danmei';
-    if(!confirm('Delete this?'))return;
-    const table=isDanmei?'danmei':'manga';
-    await sb.from(table).delete().eq('id',id);
-    if(isDanmei){danmeiList=danmeiList.filter(m=>m.id!==id);}else{mangaList=mangaList.filter(m=>m.id!==id);}
-    closeModal();renderCards();
+    const id = document.getElementById('editId').value;
+    const isDanmei = document.getElementById('editSection').value === 'danmei';
+    if (!confirm('Delete this?')) return;
+    if (isDanmei) danmeiList = danmeiList.filter(m => m.id !== id);
+    else mangaList = mangaList.filter(m => m.id !== id);
+    saveCache();
+    if (navigator.onLine && !id.startsWith('local_')) {
+      await sb.from(isDanmei ? 'danmei' : 'manga').delete().eq('id', id);
+    }
+    closeModal(); renderCards();
   }
 
-  // ── SERVICE WORKER ─────────────────────────────────
-  if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}
+  if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(() => {}); }
 
-  // ── INIT ───────────────────────────────────────────
   init();
 </script>
 </body>
